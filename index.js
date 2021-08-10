@@ -25,7 +25,7 @@ app.use((req, res, next) => {
   res.status(404).render('404', {
     title: "404",
     // description: "req.url"
-    description: "Page not found"
+    description: "Page not found "
   })
 })
 
