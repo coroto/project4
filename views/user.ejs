@@ -1,0 +1,45 @@
+<%- include("partials/header", {webTitle: 'User Information'})%>
+
+<span>
+    <strong>Name:</strong>
+        <%= user.firstname %> 
+    </span>       
+    <p><strong>Last Name: </strong><%= user.lastname %></p>
+    <p><strong>Email: </strong><%= user.email %></p>
+    <p><strong>Password: </strong><%= user.password %></p>
+</div>
+
+
+
+
+        <table >
+            <thead>
+                <tr>
+                    <th>Id </th>
+                    <th>Day</th>
+                    <th>start at</th>
+                    <th>end at</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (userSchedules.length > 0) { %>
+                    <% userSchedules.forEach(element => { %>
+                        <tr>
+                            <td><%= element.id_user %> </td>
+
+                            <% const dayNumber = element.day %> 
+                <% const weekDays = {1: 'Monday',2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} %>
+                <% const showDay = weekDays[dayNumber] %>
+                            
+                            <td><%= showDay %></td>
+                            <td><%= element.start_time %> </td>
+                            <td><%= element.end_time %> </td>
+                        </tr>
+                    <% }) %>    
+                <% } %>    
+            </tbody>
+        </table>
+
+        <div >
+            <a href="/home">Back</a>
+          </div>

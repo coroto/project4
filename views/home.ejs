@@ -1,0 +1,29 @@
+<%- include("partials/header", {webTitle: 'Home'})%>
+
+<h3>Welcome <strong><%= firstname %> </strong> Here's the list of Schedules</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Day</th>
+      <th>start at</th>
+      <th>end at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if (schedules.length > 0) { %> 
+        <% schedules.forEach(element => { %>
+            <tr>
+                <td><a href="/users/<%= element.id %>"><%= element.firstname %> <%= element.lastname %></a></td>
+                <% const dayNumber = element.day %> 
+                <% const weekDays = {1: 'Monday',2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} %>
+                <% const showDay = weekDays[dayNumber] %>
+                <td><%= showDay %></td>
+                <td><%= element.start_time %></td>
+                <td><%= element.end_time %></td>
+            </tr>
+        <% }) %> 
+    <% } %>
+  </tbody>
+</table>

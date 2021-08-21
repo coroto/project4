@@ -15,8 +15,8 @@ CREATE TABLE IF NOT EXISTS schedules (
   id SERIAL PRIMARY KEY,
   id_user INTEGER NOT NULL,
   day INTEGER CHECK (day >= 1 AND day <= 7),
-  start_time TIMESTAMPTZ NOT NULL,
-  end_time TIMESTAMPTZ NOT NULL,
+  start_time TIME NOT NULL,
+  end_time TIME NOT NULL,
 
   CONSTRAINT fk_user
     FOREIGN KEY(id_user)

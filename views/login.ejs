@@ -1,0 +1,19 @@
+<%- include("partials/header", {webTitle: 'login'})%>
+
+<h1><%=title%></h1>
+<h1>Please sign Up</h1>
+
+
+<% if (message) { %>
+    <div><%= message %></div>
+<% } %>   
+<form action="/login" method="POST">
+
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required />
+
+  <label for="password">Password:</label>
+  <input type="password" name="password" id="password" required />
+
+  <button type="submit">Login</button>
+</form>
