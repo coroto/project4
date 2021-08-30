@@ -2,6 +2,9 @@ const express=require("express")
 const app=express()
 require('dotenv').config() 
 const morgan=require("morgan")
+const chalk = require('chalk')
+//import methodOverride from "method-override"
+var methodOverride = require('method-override')
 
 const PORT = process.env.PORT  || 3000
 
@@ -25,7 +28,7 @@ app.use(
 
 //morgan config
 app.use(morgan('dev'))
-
+app.use(methodOverride("_method"));
 //View engine
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -45,6 +48,7 @@ app.use('/schedule', require('./router/schedule'))
 
 
 app.use((req, res, next) => {
+  console.log(chalk.red.bgBlue('page not found'))
   res.status(404).render('404', {
     title: "404",
     // description: "req.url"

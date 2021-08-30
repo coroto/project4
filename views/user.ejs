@@ -1,21 +1,32 @@
-<%- include("partials/header", {webTitle: 'User Information'})%>
+<%- include("partials/head", {webTitle: 'User Information'})%>
+<%- include("partials/header")%>
 
-<span>
-    <strong>Name:</strong>
-        <%= user.firstname %> 
-    </span>       
-    <p><strong>Last Name: </strong><%= user.lastname %></p>
-    <p><strong>Email: </strong><%= user.email %></p>
-    <p><strong>Password: </strong><%= user.password %></p>
+
+<div class="container py-5">
+    <p class="lead text-center">User Information</p>
+
+<div class="row">
+    <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4 text-center mt-2">
+            <img src="/avatar.png" class="img-fluid rounded-circle " alt="..." width="100" height="auto">
+          </div>
+          <div class="col-md-8 text-center">
+            <div class="card-body">
+              <h5 class="card-title"><%= user.firstname %> <%= user.lastname %></h5>
+              <p class="card-text"><strong>Email: </strong><%= user.email %></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
-
-
-
-
-        <table >
+<div class="row">
+    <div class="col-md-12  p-2">
+        <table class="table">
             <thead>
                 <tr>
-                    <th>Id </th>
                     <th>Day</th>
                     <th>start at</th>
                     <th>end at</th>
@@ -25,8 +36,6 @@
                 <% if (userSchedules.length > 0) { %>
                     <% userSchedules.forEach(element => { %>
                         <tr>
-                            <td><%= element.id_user %> </td>
-
                             <% const dayNumber = element.day %> 
                 <% const weekDays = {1: 'Monday',2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 5: 'Friday', 6: 'Saturday', 7: 'Sunday'} %>
                 <% const showDay = weekDays[dayNumber] %>
@@ -39,7 +48,14 @@
                 <% } %>    
             </tbody>
         </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12  text-center">
+        <a href="/home" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+</div>
 
-        <div >
-            <a href="/home">Back</a>
-          </div>
+
+<%- include("partials/footer")%>

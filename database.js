@@ -7,6 +7,6 @@ const host = process.env.PG_HOST
 const port = process.env.PG_PORT
 const database = process.env.DATABASE
 const connection = `postgres://${username}:${password}@${host}:${port}/${database}`
-
+//const connection = `postgres://postgres:juancho@localhost:5432/mrcoffee`
 const db = pgp(connection)
 module.exports = db

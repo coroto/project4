@@ -1,11 +1,14 @@
-<%- include("partials/header", {webTitle: 'Home'})%>
+<%- include("partials/head", {webTitle: 'Home'})%>
+<%- include("partials/header")%>
 
-<h3>Welcome <strong><%= firstname %> </strong> Here's the list of Schedules</h3>
+<div class="container text-center py-5">
 
-<table>
+  <p class="lead">Welcome <strong><%= firstname %> </strong> Here's the list of Schedules</p>
+
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Nombre</th>
+      <th>Name</th>
       <th>Day</th>
       <th>start at</th>
       <th>end at</th>
@@ -27,3 +30,8 @@
     <% } %>
   </tbody>
 </table>
+</div>
+
+
+
+<%- include("partials/footer")%>

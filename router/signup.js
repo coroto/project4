@@ -10,8 +10,10 @@ router.get("/",redirectToHome, (req, res) => {
 
   router.post('/', async(req, res)=>{
     try {
+      console.log(`entro post`)
       const usersDB = await db.oneOrNone("SELECT * FROM users WHERE email = $1;", [req.body.email.toLowerCase()])
         if (usersDB){
+          console.log(`error 2 ${error}`)
           res.render('error',{
             title: "Error",
             description: "'User already exists, please use another email address.'"
@@ -26,6 +28,7 @@ router.get("/",redirectToHome, (req, res) => {
            // res.redirect(`/home?firstname=${req.body.firstname}`)
            res.redirect("login")
           } catch (error) {
+            console.log(`error 2 ${error}`)
             res.render('error',{
               title: "Error",
               description: error
@@ -33,6 +36,7 @@ router.get("/",redirectToHome, (req, res) => {
           }
         }
     } catch (error) {
+      console.log(`error 3 ${error}`)
       res.render('error',{
         title: "Error",
         description: error

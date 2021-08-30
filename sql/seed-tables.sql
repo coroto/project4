@@ -1,4 +1,3 @@
-\c mrcoffee;
 INSERT INTO
   users(firstname, lastname, email, password)
 VALUES

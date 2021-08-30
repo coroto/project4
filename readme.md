@@ -14,7 +14,7 @@ Planning management system for MR Coffee teams includes creating an account and 
 - [x] Express
 - [x] postgres db
 - [x] EJS
-- [x] [Materializecss](http://archives.materializecss.com/0.100.2/about.html)
+- [x] [boottrap 5](https://getbootstrap.com/)
 
 ## Installation
 

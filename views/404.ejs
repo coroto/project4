@@ -1,8 +1,13 @@
-<div class="section container">
+<%- include("partials/head", {webTitle: '404'})%>
+<%- include("partials/header")%>
+
+<div class="container py-5">
     <div class="row">
-        <div class="card center hoverable  grey lighten-4">
-            <h1 class="red-text text-accent-1"><%=title%></h1>
-            <h2 class="blue-grey-text text-darken-2"><%=description%></h2>
+        <div class="card">
+            <h1><%=title%></h1>
+            <h2><%=description%></h2>
         </div>
     </div>
 </div>
+
+<%- include("partials/footer")%>

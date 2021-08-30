@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "create-db": "psql -U postgres -f sql/create-db.sql",
-    "create-tables": "psql -U postgres -d mrcofee -f sql/create-tables.sql",
-    "seed-tables": "psql -U postgres -d mrcofee -f sql/seed-tables.sql"
+    "create-tables": "psql -U postgres -d mrcoffee -f sql/create-tables.sql",
+    "seed-tables": "psql -U postgres -d mrcoffee -f sql/seed-tables.sql"
   },
   "repository": {
     "type": "git",
@@ -25,8 +25,12 @@
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
+    "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
     "pg-promise": "^10.11.0"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.2"
   }
 }
